@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <input type="text" placeholder="your API key" #apikey>
+  <button type="button" (click)="onShowLogs()">Show Logs</button>
+  <br><br>
+  <p>{{message}}</p>
+  
+  <div class="row">
+        <div class="col xs-1">
+          <p>title</p>
+        </div>
+  </div>
+  <div class="row">
+    <ul>
+      <app-log-item 
+        *ngFor="let log of logs" 
+        [log]="log"
+        ></app-log-item>
+    </ul>
+  </div>
+</div>
