@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { BackendService } from '../backend.service';
 import {Response} from '@angular/http';
 
@@ -12,15 +12,16 @@ export class DashboardComponent implements OnInit {
   @ViewChild('apikey') apiKeyEl;
   apiKey: string;
   logs: {}[];
-  message:string = "Please enter your API key"
+  message: string = "";
 
   constructor(private backend: BackendService) { }
 
-  ngOnInit() {
+  ngOnInit(){
+
   }
+
   onShowLogs(){
-    this.apiKey = this.apiKeyEl.nativeElement.value;
-    console.log(this.apiKey);
+    this.apiKey = this.apiKeyEl.nativeElement.value;    
     this.backend.getLogs(this.apiKey)
       .subscribe(
         (res: Response) => {
@@ -35,6 +36,9 @@ export class DashboardComponent implements OnInit {
           this.message = err.json().message;
         }
       )
+  }
+  myFunc(){
+    console.log('works');
   }
 
 }

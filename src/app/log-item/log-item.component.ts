@@ -5,11 +5,13 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './log-item.component.html',
   styleUrls: ['./log-item.component.css']
 })
+
 export class LogItemComponent implements OnInit {
+  
   @Input() log: string;
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {    
   }
 
 }

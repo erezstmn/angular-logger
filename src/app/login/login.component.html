@@ -1,11 +1,13 @@
-<div>
+<div class="container-fluid">
   <form>
-      <fieldset>
-          <h1>Login</h1>
-          <input type="text" placeholder="username" id="user_name" #username/>
-          <input type="password" placeholder="password" id="password" #password/>
-          <button (click)="onSubmit()" type="button">submit</button>
-      </fieldset>
-      <p>{{message}}</p>
+      <div class="form-group">
+            <h2 class="text-muted">Login</h2>
+            <label for="exampleInputEmail1">Username</label>
+            <input type="text" class="form-control" placeholder="username" id="user_name" #username/>
+            <label for="exampleInputEmail1">Password</label>
+            <input type="password" class="form-control" placeholder="password" id="password" #password/>
+            <button (click)="onSubmit()" type="button" class="btn btn-primary">submit</button>
+            <p>{{message}}</p>
+      </div>             
   </form>
 </div>

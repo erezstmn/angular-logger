@@ -13,5 +13,5 @@ export class BackendService {
   }
   getLogs(api_key: string){
     return this.http.get('http://18.185.120.246/get_logs?api_key='+api_key);
-  }
+  }  
 }

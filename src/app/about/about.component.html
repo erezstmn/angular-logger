@@ -1,26 +1,28 @@
 <div class="container-fluid">
             
-  <h1>About</h1>
+  <h2 class="text-muted">About</h2>
   <p>Welcome to esh.io a simple logging SaaS.</p>
-  <p>In order to use esh.io simply insert this code inside your head tag:</p>
-  <fieldset>               
-      <div>&lt;script src="https://unpkg.com/axios/dist/axios.min.js">		&lt;/script></div>
-      <div  style="text-indent: 1em">&lt;script></div>
-          <div  style="text-indent: 2em">const esh_io = &#123;</div>
-      <div  style="text-indent: 3em">sendLog : (api_key, title, text) => &#123;</div>
-      <div  style="text-indent: 4em">let logData = &#123;</div>
-              <div  style="text-indent: 4em">api_key,</div>
-  <div  style="text-indent: 4em">title,</div>
-  <div  style="text-indent: 4em">text</div>                       
-              <div  style="text-indent: 3em">&#125;</div>
-          <div  style="text-indent: 2em">axios.post('ec2-18-185-120-246.eu-central-1.compute.amazonaws.com/insert_logs', logData).then((res) => &#123;console.log(res)&#125;).catch((err) => &#123;console.log(err)&#125;)</div>
-      <div  style="text-indent: 1em">&#125;</div>
-      &#125;<br/>
-  &lt;/script>                                         
-  </fieldset>
+  <p>In order to use esh.io simply insert this code inside your head tag:</p>    
+      <pre><code>
+        &lt;script src="https://unpkg.com/axios/dist/axios.min.js">&lt;/script>
+        &lt;script>
+            const esh_io = &#123;
+            sendLog : (api_key, title, text) => &#123;
+            let logData = &#123;
+                api_key,
+                title,  
+                text 
+                &#125;                    
+            axios.post('ec2-18-185-120-246.eu-central-1.compute.amazonaws.com/insert_logs', logData).then((res) => &#123;console.log(res)&#125;).catch((err) => &#123;console.log(err)&#125;)
+            &#125;
+        &#125;
+        &lt;/script>
+      </code></pre> 
   <p>You can then use the sendLog function inside your code like this:</p>
-  <fieldset>
-      esh_io.sendLog('my api key','my log title','this is my log text');
-  </fieldset>
+  <pre><code>
+    esh_io.sendLog('MY_API_KEY','MY_LOG_TITLE','THIS_IS_MY_LOG_TEXT');
+  </code></pre>
+     
+
   <p>And your logs will be availble at the dashboard section of esh.io website</p>
 </div>
